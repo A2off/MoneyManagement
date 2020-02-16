@@ -1,43 +1,58 @@
 package cn.azoff.money.capital.model;
+ 
+/**
+ * 
+ * Model类
+ * 
+ * @version 2020-02-16 18:02:08
+ * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
+ */
+public class CapCapitalChangeType{
+    //资金变动类型
+    private Integer cctid;
+    
+    //变动类型(1资金减少、2资金增加)
+    private Integer ccttype;
+    
+    //类型排序
+    private Integer cctsort;
+    
+    //类型描述
+    private String cctdescribe;
+    
 
-public class CapCapitalChangeType {
-    private Integer cctId;
-
-    private Integer cctType;
-
-    private Integer cctSort;
-
-    private String cctDescribe;
-
-    public Integer getCctId() {
-        return cctId;
+ 
+    /********** get/set ***********/
+    public Integer getCctid() {
+        return cctid;
     }
-
-    public void setCctId(Integer cctId) {
-        this.cctId = cctId;
+ 
+    public void setCctid(Integer cctid) {
+        this.cctid = cctid;
     }
-
-    public Integer getCctType() {
-        return cctType;
+     
+    public Integer getCcttype() {
+        return ccttype;
     }
-
-    public void setCctType(Integer cctType) {
-        this.cctType = cctType;
+ 
+    public void setCcttype(Integer ccttype) {
+        this.ccttype = ccttype;
     }
-
-    public Integer getCctSort() {
-        return cctSort;
+     
+    public Integer getCctsort() {
+        return cctsort;
     }
-
-    public void setCctSort(Integer cctSort) {
-        this.cctSort = cctSort;
+ 
+    public void setCctsort(Integer cctsort) {
+        this.cctsort = cctsort;
     }
-
-    public String getCctDescribe() {
-        return cctDescribe;
+     
+    public String getCctdescribe() {
+        return cctdescribe;
     }
-
-    public void setCctDescribe(String cctDescribe) {
-        this.cctDescribe = cctDescribe == null ? null : cctDescribe.trim();
+ 
+    public void setCctdescribe(String cctdescribe) {
+        this.cctdescribe = cctdescribe;
     }
+     
 }

@@ -1,43 +1,58 @@
 package cn.azoff.money.goods.model;
+ 
+/**
+ * 
+ * Model类
+ * 
+ * @version 2020-02-16 18:10:40
+ * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
+ */
+public class GdsGoodsClass{
+    //物品分类
+    private Integer gdcid;
+    
+    //物品分类Pid
+    private Integer gdcpid;
+    
+    //分类名
+    private String gdcname;
+    
+    //分类描述
+    private String gdcdescribe;
+    
 
-public class GdsGoodsClass {
-    private Integer gdcId;
-
-    private Integer gdcPid;
-
-    private String gdcName;
-
-    private String gdcDescribe;
-
-    public Integer getGdcId() {
-        return gdcId;
+ 
+    /********** get/set ***********/
+    public Integer getGdcid() {
+        return gdcid;
     }
-
-    public void setGdcId(Integer gdcId) {
-        this.gdcId = gdcId;
+ 
+    public void setGdcid(Integer gdcid) {
+        this.gdcid = gdcid;
     }
-
-    public Integer getGdcPid() {
-        return gdcPid;
+     
+    public Integer getGdcpid() {
+        return gdcpid;
     }
-
-    public void setGdcPid(Integer gdcPid) {
-        this.gdcPid = gdcPid;
+ 
+    public void setGdcpid(Integer gdcpid) {
+        this.gdcpid = gdcpid;
     }
-
-    public String getGdcName() {
-        return gdcName;
+     
+    public String getGdcname() {
+        return gdcname;
     }
-
-    public void setGdcName(String gdcName) {
-        this.gdcName = gdcName == null ? null : gdcName.trim();
+ 
+    public void setGdcname(String gdcname) {
+        this.gdcname = gdcname;
     }
-
-    public String getGdcDescribe() {
-        return gdcDescribe;
+     
+    public String getGdcdescribe() {
+        return gdcdescribe;
     }
-
-    public void setGdcDescribe(String gdcDescribe) {
-        this.gdcDescribe = gdcDescribe == null ? null : gdcDescribe.trim();
+ 
+    public void setGdcdescribe(String gdcdescribe) {
+        this.gdcdescribe = gdcdescribe;
     }
+     
 }
