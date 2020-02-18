@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
-
 import cn.azoff.common.constant.Constants;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * 
@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public class BaseController {
-	protected Logger log = Logger.getLogger(this.getClass());
+	protected Logger log = LogManager.getLogger(this.getClass());
 	protected static boolean isEncode = false;//是否加密
 	
 	/**
