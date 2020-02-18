@@ -14,7 +14,7 @@ import cn.azoff.money.capital.service.CapCapitalChangeTypeService;
  * 
  * 控制器
  * 
- * @version 2020-02-16 18:10:40
+ * @version 2020-02-18 20:51:18
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 @Controller
@@ -54,7 +54,7 @@ public class CapCapitalChangeTypeController {
 	@RequestMapping("findByCctId")
 	@ResponseBody
 	public Map<String, Object> findByCctId(Integer cctId) {
-		return capCapitalChangeTypeService.findByCctId(CctId);
+		return capCapitalChangeTypeService.findByCctId(cctId);
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class CapCapitalChangeTypeController {
 	@RequestMapping("/deleteByCctId")
 	@ResponseBody
 	public Map<String, Object> deleteByCctId(Integer cctId){
-		return capCapitalChangeTypeService.deleteByCctId(CctId);
+		return capCapitalChangeTypeService.deleteByCctId(cctId);
 	}
 
 }

@@ -14,7 +14,7 @@ import cn.azoff.money.goods.service.GdsGoodsClassService;
  * 
  * 控制器
  * 
- * @version 2020-02-16 18:12:16
+ * @version 2020-02-18 20:54:35
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 @Controller
@@ -54,7 +54,7 @@ public class GdsGoodsClassController {
 	@RequestMapping("findByGdcId")
 	@ResponseBody
 	public Map<String, Object> findByGdcId(Integer gdcId) {
-		return gdsGoodsClassService.findByGdcId(GdcId);
+		return gdsGoodsClassService.findByGdcId(gdcId);
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class GdsGoodsClassController {
 	@RequestMapping("/deleteByGdcId")
 	@ResponseBody
 	public Map<String, Object> deleteByGdcId(Integer gdcId){
-		return gdsGoodsClassService.deleteByGdcId(GdcId);
+		return gdsGoodsClassService.deleteByGdcId(gdcId);
 	}
 
 }

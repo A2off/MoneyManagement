@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  *
  * SpringBoot启动器
+ * @version 2020-02-16 18:10:40
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
- * @date 2020/2/12 9:46
  */
 @SpringBootApplication
 // @SpringBootApplication声明让spring boot自动给程序进行必要的配置

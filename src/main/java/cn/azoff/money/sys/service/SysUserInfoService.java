@@ -8,7 +8,7 @@ import cn.azoff.money.sys.model.SysUserInfo;
  * 
  * 逻辑实现类接口层
  * 
- * @version 2020-02-16 18:14:25
+ * @version 2020-02-18 20:54:48
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public interface SysUserInfoService {

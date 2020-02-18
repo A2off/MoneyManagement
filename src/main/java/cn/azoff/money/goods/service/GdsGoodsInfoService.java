@@ -8,7 +8,7 @@ import cn.azoff.money.goods.model.GdsGoodsInfo;
  * 
  * 逻辑实现类接口层
  * 
- * @version 2020-02-16 18:12:16
+ * @version 2020-02-18 20:59:10
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public interface GdsGoodsInfoService {

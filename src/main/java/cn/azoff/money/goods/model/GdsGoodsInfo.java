@@ -2,57 +2,57 @@ package cn.azoff.money.goods.model;
  
 /**
  * 
- * Model类
+ * 物品详情
  * 
- * @version 2020-02-16 18:10:40
+ * @version 2020-02-18 20:59:10
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public class GdsGoodsInfo{
     //物品详情
-    private Integer gdiid;
+    private Integer gdiId;
     
     //物品分类Id
-    private Integer gdcid;
+    private Integer gdcId;
     
     //物品名称
-    private String gdiname;
+    private String gdiName;
     
     //物品描述
-    private String gdidescribe;
+    private String gdiDescribe;
     
 
  
     /********** get/set ***********/
-    public Integer getGdiid() {
-        return gdiid;
+    public Integer getGdiId() {
+        return gdiId;
     }
  
-    public void setGdiid(Integer gdiid) {
-        this.gdiid = gdiid;
+    public void setGdiId(Integer gdiId) {
+        this.gdiId = gdiId;
     }
      
-    public Integer getGdcid() {
-        return gdcid;
+    public Integer getGdcId() {
+        return gdcId;
     }
  
-    public void setGdcid(Integer gdcid) {
-        this.gdcid = gdcid;
+    public void setGdcId(Integer gdcId) {
+        this.gdcId = gdcId;
     }
      
-    public String getGdiname() {
-        return gdiname;
+    public String getGdiName() {
+        return gdiName;
     }
  
-    public void setGdiname(String gdiname) {
-        this.gdiname = gdiname;
+    public void setGdiName(String gdiName) {
+        this.gdiName = gdiName;
     }
      
-    public String getGdidescribe() {
-        return gdidescribe;
+    public String getGdiDescribe() {
+        return gdiDescribe;
     }
  
-    public void setGdidescribe(String gdidescribe) {
-        this.gdidescribe = gdidescribe;
+    public void setGdiDescribe(String gdiDescribe) {
+        this.gdiDescribe = gdiDescribe;
     }
      
 }

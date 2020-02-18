@@ -1,104 +1,104 @@
 package cn.azoff.money.capital.model;
 
 import java.math.BigDecimal;
-
+ 
 /**
  * 
- * Model类
+ * 资金变动记录
  * 
- * @version 2020-02-16 18:02:08
+ * @version 2020-02-18 20:51:18
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public class CapCapitalChangeRecord{
     //资金变动记录
-    private Integer ccrid;
+    private Integer ccrId;
     
     //用户Id
-    private Integer suiid;
+    private Integer suiId;
     
     //资金类型Id
-    private Integer cctid;
+    private Integer cctId;
     
     //记录Id(退款用)
-    private Integer ccrpid;
+    private Integer ccrPid;
     
     //状态(1正常，2删除)
-    private Integer ccrstatus;
+    private Integer ccrStatus;
     
     //变动金额
-    private BigDecimal ccramount;
+    private BigDecimal ccrAmount;
     
     //变动时间
-    private Long ccrchangetime;
+    private Long ccrChangeTime;
     
     //更新时间
-    private Long ccrupdatetime;
+    private Long ccrUpdateTime;
     
 
  
     /********** get/set ***********/
-    public Integer getCcrid() {
-        return ccrid;
+    public Integer getCcrId() {
+        return ccrId;
     }
  
-    public void setCcrid(Integer ccrid) {
-        this.ccrid = ccrid;
+    public void setCcrId(Integer ccrId) {
+        this.ccrId = ccrId;
     }
      
-    public Integer getSuiid() {
-        return suiid;
+    public Integer getSuiId() {
+        return suiId;
     }
  
-    public void setSuiid(Integer suiid) {
-        this.suiid = suiid;
+    public void setSuiId(Integer suiId) {
+        this.suiId = suiId;
     }
      
-    public Integer getCctid() {
-        return cctid;
+    public Integer getCctId() {
+        return cctId;
     }
  
-    public void setCctid(Integer cctid) {
-        this.cctid = cctid;
+    public void setCctId(Integer cctId) {
+        this.cctId = cctId;
     }
      
-    public Integer getCcrpid() {
-        return ccrpid;
+    public Integer getCcrPid() {
+        return ccrPid;
     }
  
-    public void setCcrpid(Integer ccrpid) {
-        this.ccrpid = ccrpid;
+    public void setCcrPid(Integer ccrPid) {
+        this.ccrPid = ccrPid;
     }
      
-    public Integer getCcrstatus() {
-        return ccrstatus;
+    public Integer getCcrStatus() {
+        return ccrStatus;
     }
  
-    public void setCcrstatus(Integer ccrstatus) {
-        this.ccrstatus = ccrstatus;
+    public void setCcrStatus(Integer ccrStatus) {
+        this.ccrStatus = ccrStatus;
     }
      
-    public BigDecimal getCcramount() {
-        return ccramount;
+    public BigDecimal getCcrAmount() {
+        return ccrAmount;
     }
  
-    public void setCcramount(BigDecimal ccramount) {
-        this.ccramount = ccramount;
+    public void setCcrAmount(BigDecimal ccrAmount) {
+        this.ccrAmount = ccrAmount;
     }
      
-    public Long getCcrchangetime() {
-        return ccrchangetime;
+    public Long getCcrChangeTime() {
+        return ccrChangeTime;
     }
  
-    public void setCcrchangetime(Long ccrchangetime) {
-        this.ccrchangetime = ccrchangetime;
+    public void setCcrChangeTime(Long ccrChangeTime) {
+        this.ccrChangeTime = ccrChangeTime;
     }
      
-    public Long getCcrupdatetime() {
-        return ccrupdatetime;
+    public Long getCcrUpdateTime() {
+        return ccrUpdateTime;
     }
  
-    public void setCcrupdatetime(Long ccrupdatetime) {
-        this.ccrupdatetime = ccrupdatetime;
+    public void setCcrUpdateTime(Long ccrUpdateTime) {
+        this.ccrUpdateTime = ccrUpdateTime;
     }
      
 }

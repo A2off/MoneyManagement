@@ -14,7 +14,7 @@ import cn.azoff.money.sys.service.SysUserInfoService;
  * 
  * 控制器
  * 
- * @version 2020-02-16 18:14:25
+ * @version 2020-02-18 20:54:48
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 @Controller
@@ -54,7 +54,7 @@ public class SysUserInfoController {
 	@RequestMapping("findBySuiId")
 	@ResponseBody
 	public Map<String, Object> findBySuiId(Integer suiId) {
-		return sysUserInfoService.findBySuiId(SuiId);
+		return sysUserInfoService.findBySuiId(suiId);
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class SysUserInfoController {
 	@RequestMapping("/deleteBySuiId")
 	@ResponseBody
 	public Map<String, Object> deleteBySuiId(Integer suiId){
-		return sysUserInfoService.deleteBySuiId(SuiId);
+		return sysUserInfoService.deleteBySuiId(suiId);
 	}
 
 }

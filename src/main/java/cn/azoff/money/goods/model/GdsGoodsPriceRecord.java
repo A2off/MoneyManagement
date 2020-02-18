@@ -1,71 +1,71 @@
 package cn.azoff.money.goods.model;
 
 import java.math.BigDecimal;
-
+ 
 /**
  * 
- * Model类
+ * 物品单价记录
  * 
- * @version 2020-02-16 18:10:40
+ * @version 2020-02-18 20:59:10
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public class GdsGoodsPriceRecord{
     //物品单价记录
-    private Integer gprid;
+    private Integer gprId;
     
     //物品详情Id
-    private Integer gdiid;
+    private Integer gdiId;
     
     //物品单价
-    private BigDecimal gprprice;
+    private BigDecimal gprPrice;
     
     //记录时间
-    private Long gprrecordtime;
+    private Long gprRecordTime;
     
     //记录创建时间
-    private Long gprcreatetime;
+    private Long gprCreateTime;
     
 
  
     /********** get/set ***********/
-    public Integer getGprid() {
-        return gprid;
+    public Integer getGprId() {
+        return gprId;
     }
  
-    public void setGprid(Integer gprid) {
-        this.gprid = gprid;
+    public void setGprId(Integer gprId) {
+        this.gprId = gprId;
     }
      
-    public Integer getGdiid() {
-        return gdiid;
+    public Integer getGdiId() {
+        return gdiId;
     }
  
-    public void setGdiid(Integer gdiid) {
-        this.gdiid = gdiid;
+    public void setGdiId(Integer gdiId) {
+        this.gdiId = gdiId;
     }
      
-    public BigDecimal getGprprice() {
-        return gprprice;
+    public BigDecimal getGprPrice() {
+        return gprPrice;
     }
  
-    public void setGprprice(BigDecimal gprprice) {
-        this.gprprice = gprprice;
+    public void setGprPrice(BigDecimal gprPrice) {
+        this.gprPrice = gprPrice;
     }
      
-    public Long getGprrecordtime() {
-        return gprrecordtime;
+    public Long getGprRecordTime() {
+        return gprRecordTime;
     }
  
-    public void setGprrecordtime(Long gprrecordtime) {
-        this.gprrecordtime = gprrecordtime;
+    public void setGprRecordTime(Long gprRecordTime) {
+        this.gprRecordTime = gprRecordTime;
     }
      
-    public Long getGprcreatetime() {
-        return gprcreatetime;
+    public Long getGprCreateTime() {
+        return gprCreateTime;
     }
  
-    public void setGprcreatetime(Long gprcreatetime) {
-        this.gprcreatetime = gprcreatetime;
+    public void setGprCreateTime(Long gprCreateTime) {
+        this.gprCreateTime = gprCreateTime;
     }
      
 }

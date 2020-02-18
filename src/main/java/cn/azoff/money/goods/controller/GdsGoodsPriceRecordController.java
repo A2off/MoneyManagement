@@ -14,7 +14,7 @@ import cn.azoff.money.goods.service.GdsGoodsPriceRecordService;
  * 
  * 控制器
  * 
- * @version 2020-02-16 18:12:16
+ * @version 2020-02-18 20:54:35
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 @Controller
@@ -54,7 +54,7 @@ public class GdsGoodsPriceRecordController {
 	@RequestMapping("findByGprId")
 	@ResponseBody
 	public Map<String, Object> findByGprId(Integer gprId) {
-		return gdsGoodsPriceRecordService.findByGprId(GprId);
+		return gdsGoodsPriceRecordService.findByGprId(gprId);
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class GdsGoodsPriceRecordController {
 	@RequestMapping("/deleteByGprId")
 	@ResponseBody
 	public Map<String, Object> deleteByGprId(Integer gprId){
-		return gdsGoodsPriceRecordService.deleteByGprId(GprId);
+		return gdsGoodsPriceRecordService.deleteByGprId(gprId);
 	}
 
 }

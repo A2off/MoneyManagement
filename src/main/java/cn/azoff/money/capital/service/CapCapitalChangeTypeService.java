@@ -8,7 +8,7 @@ import cn.azoff.money.capital.model.CapCapitalChangeType;
  * 
  * 逻辑实现类接口层
  * 
- * @version 2020-02-16 18:10:40
+ * @version 2020-02-18 21:02:17
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
 public interface CapCapitalChangeTypeService {
