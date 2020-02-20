@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.azoff.money.goods.dao.GdsGoodsPriceRecordMapper" >
+  <resultMap id="BaseResultMap" type="cn.azoff.money.goods.model.GdsGoodsPriceRecord" >
+    <id column="gpr_id" property="gprId" jdbcType="INTEGER" />
+    <result column="gdi_id" property="gdiId" jdbcType="INTEGER" />
+    <result column="gpr_price" property="gprPrice" jdbcType="DECIMAL" />
+    <result column="gpr_record_time" property="gprRecordTime" jdbcType="BIGINT" />
+    <result column="gpr_create_time" property="gprCreateTime" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    gpr_id, gdi_id, gpr_price, gpr_record_time, gpr_create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from gds_goods_price_record
+    where gpr_id = #{gprId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from gds_goods_price_record
+    where gpr_id = #{gprId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.azoff.money.goods.model.GdsGoodsPriceRecord" >
+    insert into gds_goods_price_record (gpr_id, gdi_id, gpr_price, 
+      gpr_record_time, gpr_create_time)
+    values (#{gprId,jdbcType=INTEGER}, #{gdiId,jdbcType=INTEGER}, #{gprPrice,jdbcType=DECIMAL}, 
+      #{gprRecordTime,jdbcType=BIGINT}, #{gprCreateTime,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.azoff.money.goods.model.GdsGoodsPriceRecord" >
+    insert into gds_goods_price_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gprId != null" >
+        gpr_id,
+      </if>
+      <if test="gdiId != null" >
+        gdi_id,
+      </if>
+      <if test="gprPrice != null" >
+        gpr_price,
+      </if>
+      <if test="gprRecordTime != null" >
+        gpr_record_time,
+      </if>
+      <if test="gprCreateTime != null" >
+        gpr_create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gprId != null" >
+        #{gprId,jdbcType=INTEGER},
+      </if>
+      <if test="gdiId != null" >
+        #{gdiId,jdbcType=INTEGER},
+      </if>
+      <if test="gprPrice != null" >
+        #{gprPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="gprRecordTime != null" >
+        #{gprRecordTime,jdbcType=BIGINT},
+      </if>
+      <if test="gprCreateTime != null" >
+        #{gprCreateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.azoff.money.goods.model.GdsGoodsPriceRecord" >
+    update gds_goods_price_record
+    <set >
+      <if test="gdiId != null" >
+        gdi_id = #{gdiId,jdbcType=INTEGER},
+      </if>
+      <if test="gprPrice != null" >
+        gpr_price = #{gprPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="gprRecordTime != null" >
+        gpr_record_time = #{gprRecordTime,jdbcType=BIGINT},
+      </if>
+      <if test="gprCreateTime != null" >
+        gpr_create_time = #{gprCreateTime,jdbcType=BIGINT},
+      </if>
+    </set>
+    where gpr_id = #{gprId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.azoff.money.goods.model.GdsGoodsPriceRecord" >
+    update gds_goods_price_record
+    set gdi_id = #{gdiId,jdbcType=INTEGER},
+      gpr_price = #{gprPrice,jdbcType=DECIMAL},
+      gpr_record_time = #{gprRecordTime,jdbcType=BIGINT},
+      gpr_create_time = #{gprCreateTime,jdbcType=BIGINT}
+    where gpr_id = #{gprId,jdbcType=INTEGER}
+  </update>
+</mapper>
