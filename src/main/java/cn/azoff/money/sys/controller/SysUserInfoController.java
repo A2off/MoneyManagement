@@ -3,9 +3,8 @@ package cn.azoff.money.sys.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import cn.azoff.money.sys.model.SysUserInfo;
 import cn.azoff.money.sys.service.SysUserInfoService;
@@ -14,10 +13,10 @@ import cn.azoff.money.sys.service.SysUserInfoService;
  * 
  * 控制器
  * 
- * @version 2020-02-18 20:54:48
+ * @version 2020-02-29 15:46:58
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-@Controller
+@RestController
 @RequestMapping("sysUserInfo")
 public class SysUserInfoController {
 	
@@ -30,7 +29,6 @@ public class SysUserInfoController {
 	 * @return
 	 */
 	@RequestMapping("findByAll")
-	@ResponseBody
 	public Map<String, Object> findByAll(SysUserInfo record){
 		return sysUserInfoService.findByAll(record);
 	}
@@ -41,7 +39,6 @@ public class SysUserInfoController {
 	 * @return
 	 */
 	@RequestMapping("save")
-	@ResponseBody
 	public Map<String, Object> save(SysUserInfo record) {
 		return sysUserInfoService.save(record);
 	}
@@ -52,7 +49,6 @@ public class SysUserInfoController {
 	 * @return
 	 */
 	@RequestMapping("findBySuiId")
-	@ResponseBody
 	public Map<String, Object> findBySuiId(Integer suiId) {
 		return sysUserInfoService.findBySuiId(suiId);
 	}
@@ -63,7 +59,6 @@ public class SysUserInfoController {
 	 * @return
 	 */
 	@RequestMapping("/deleteBySuiId")
-	@ResponseBody
 	public Map<String, Object> deleteBySuiId(Integer suiId){
 		return sysUserInfoService.deleteBySuiId(suiId);
 	}

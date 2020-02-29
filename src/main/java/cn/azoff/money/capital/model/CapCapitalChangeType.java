@@ -20,8 +20,6 @@ public class CapCapitalChangeType{
     //类型描述
     private String cctDescribe;
     
-
- 
     /********** get/set ***********/
     public Integer getCctId() {
         return cctId;
