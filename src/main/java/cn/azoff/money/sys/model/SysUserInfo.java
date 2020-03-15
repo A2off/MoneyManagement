@@ -1,13 +1,15 @@
 package cn.azoff.money.sys.model;
+
+import cn.azoff.common.base.BaseParam;
  
 /**
  * 
  * 用户信息
  * 
- * @version 2020-02-18 20:54:49
+ * @version 2020-03-15 20:58:13
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-public class SysUserInfo{
+public class SysUserInfo extends BaseParam{
     //用户信息
     private Integer suiId;
     

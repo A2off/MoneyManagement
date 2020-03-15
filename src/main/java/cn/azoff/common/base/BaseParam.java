@@ -8,8 +8,8 @@ package cn.azoff.common.base;
  */
 public class BaseParam {
 	
-	private Integer page; //页数
-	private Integer size; //每页显示的条数
+	private Integer page = 1; //页数,默认值为1
+	private Integer size = 15; //每页显示的条数,默认值为15
 	private Integer rows; //查询用 - 数据行实际起始数
 	private Integer id;
 	private String ids;

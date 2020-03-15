@@ -1,15 +1,17 @@
 package cn.azoff.money.goods.model;
 
 import java.math.BigDecimal;
+
+import cn.azoff.common.base.BaseParam;
  
 /**
  * 
  * 物品单价记录
  * 
- * @version 2020-02-18 20:59:10
+ * @version 2020-03-15 20:58:13
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-public class GdsGoodsPriceRecord{
+public class GdsGoodsPriceRecord extends BaseParam{
     //物品单价记录
     private Integer gprId;
     

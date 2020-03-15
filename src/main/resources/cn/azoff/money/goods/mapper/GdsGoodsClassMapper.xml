@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.azoff.money.capital.dao.GdsGoodsClassMapper" >
+	<resultMap id="BaseResultMap" type="cn.azoff.money.capital.model.GdsGoodsClass" >
+		<id column="gdc_id" property="gdcId" jdbcType="INTEGER" />
+		<result column="gdc_pid" property="gdcPid" jdbcType="INTEGER" />
+		<result column="gdc_name" property="gdcName" jdbcType="VARCHAR" />
+		<result column="gdc_describe" property="gdcDescribe" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List" >
+		gdc.gdc_id, gdc.gdc_pid, gdc.gdc_name, gdc.gdc_describe		
+	</sql>
+	
+	<sql id="Base_Query_List" >
+		<if test="gdcId != null and gdcId != '' ">
+			and gdc.gdc_id = #{gdcId}
+			<!-- and gdc.gdc_id like "%#{gdcId}%" -->
+		</if>
+	</sql>
+	
+	
+	<select id="findByAll" resultMap="BaseResultMap" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+		select <include refid="Base_Column_List" />
+		from gds_goods_class as gdc 
+		<where>
+			<include refid="Base_Query_List" />
+		</where>
+		order by gdc.gdc_id desc
+		limit #{rows},#{size}
+	</select>
+	
+	<select id="findByAllCount" resultType="java.lang.Integer" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+		select count(*)
+		from gds_goods_class as gdc 
+		<where>
+			<include refid="Base_Query_List" />
+		</where>
+	</select>
+	
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select 
+		<include refid="Base_Column_List" />
+		from gds_goods_class as gdc 
+		where gdc.gdc_id = #{gdcId,jdbcType=INTEGER}
+	</select>
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from gds_goods_class
+		where gdc_id = #{gdcId,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="insert" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+		insert into gds_goods_class (gdc.gdc_id, gdc.gdc_pid, gdc.gdc_name,			gdc.gdc_describe)
+		values (#{gdcId,jdbcType=INTEGER},#{gdcPid,jdbcType=INTEGER},#{gdcName,jdbcType=VARCHAR},			#{gdcDescribe,jdbcType=VARCHAR})
+	</insert>
+	
+	<insert id="insertSelective" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+		insert into gds_goods_class
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="gdcId != null" >
+				gdc_id,
+			</if>
+			<if test="gdcPid != null" >
+				gdc_pid,
+			</if>
+			<if test="gdcName != null" >
+				gdc_name,
+			</if>
+			<if test="gdcDescribe != null" >
+				gdc_describe,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="gdcId != null" >
+				#{gdcId,jdbcType=INTEGER},
+			</if>
+			<if test="gdcPid != null" >
+				#{gdcPid,jdbcType=INTEGER},
+			</if>
+			<if test="gdcName != null" >
+				#{gdcName,jdbcType=VARCHAR},
+			</if>
+			<if test="gdcDescribe != null" >
+				#{gdcDescribe,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+	    update gds_goods_class
+	    <set>
+			<if test="gdcPid != null" >
+				gdc_pid = #{gdcPid,jdbcType=INTEGER},
+			</if>
+			<if test="gdcName != null" >
+				gdc_name = #{gdcName,jdbcType=VARCHAR},
+			</if>
+			<if test="gdcDescribe != null" >
+				gdc_describe = #{gdcDescribe,jdbcType=VARCHAR},
+			</if>
+	    </set>
+		where gdc_id = #{gdcId,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.azoff.money.capital.model.GdsGoodsClass" >
+	    update gds_goods_class
+	    set gdc_pid = #{gdcPid,jdbcType=INTEGER},
+			gdc_name = #{gdcName,jdbcType=VARCHAR},
+			gdc_describe = #{gdcDescribe,jdbcType=VARCHAR}
+		where gdc_id = #{gdcId,jdbcType=INTEGER}
+	</update>
+	
+</mapper>

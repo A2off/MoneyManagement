@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.azoff.money.capital.dao.CapCapitalChangeTypeMapper" >
+	<resultMap id="BaseResultMap" type="cn.azoff.money.capital.model.CapCapitalChangeType" >
+		<id column="cct_id" property="cctId" jdbcType="INTEGER" />
+		<result column="cct_type" property="cctType" jdbcType="INTEGER" />
+		<result column="cct_sort" property="cctSort" jdbcType="INTEGER" />
+		<result column="cct_describe" property="cctDescribe" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List" >
+		cct.cct_id, cct.cct_type, cct.cct_sort, cct.cct_describe		
+	</sql>
+	
+	<sql id="Base_Query_List" >
+		<if test="cctId != null and cctId != '' ">
+			and cct.cct_id = #{cctId}
+			<!-- and cct.cct_id like "%#{cctId}%" -->
+		</if>
+	</sql>
+	
+	
+	<select id="findByAll" resultMap="BaseResultMap" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+		select <include refid="Base_Column_List" />
+		from cap_capital_change_type as cct 
+		<where>
+			<include refid="Base_Query_List" />
+		</where>
+		order by cct.cct_id desc
+		limit #{rows},#{size}
+	</select>
+	
+	<select id="findByAllCount" resultType="java.lang.Integer" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+		select count(*)
+		from cap_capital_change_type as cct 
+		<where>
+			<include refid="Base_Query_List" />
+		</where>
+	</select>
+	
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select 
+		<include refid="Base_Column_List" />
+		from cap_capital_change_type as cct 
+		where cct.cct_id = #{cctId,jdbcType=INTEGER}
+	</select>
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from cap_capital_change_type
+		where cct_id = #{cctId,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="insert" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+		insert into cap_capital_change_type (cct.cct_id, cct.cct_type, cct.cct_sort,			cct.cct_describe)
+		values (#{cctId,jdbcType=INTEGER},#{cctType,jdbcType=INTEGER},#{cctSort,jdbcType=INTEGER},			#{cctDescribe,jdbcType=VARCHAR})
+	</insert>
+	
+	<insert id="insertSelective" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+		insert into cap_capital_change_type
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="cctId != null" >
+				cct_id,
+			</if>
+			<if test="cctType != null" >
+				cct_type,
+			</if>
+			<if test="cctSort != null" >
+				cct_sort,
+			</if>
+			<if test="cctDescribe != null" >
+				cct_describe,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="cctId != null" >
+				#{cctId,jdbcType=INTEGER},
+			</if>
+			<if test="cctType != null" >
+				#{cctType,jdbcType=INTEGER},
+			</if>
+			<if test="cctSort != null" >
+				#{cctSort,jdbcType=INTEGER},
+			</if>
+			<if test="cctDescribe != null" >
+				#{cctDescribe,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+	    update cap_capital_change_type
+	    <set>
+			<if test="cctType != null" >
+				cct_type = #{cctType,jdbcType=INTEGER},
+			</if>
+			<if test="cctSort != null" >
+				cct_sort = #{cctSort,jdbcType=INTEGER},
+			</if>
+			<if test="cctDescribe != null" >
+				cct_describe = #{cctDescribe,jdbcType=VARCHAR},
+			</if>
+	    </set>
+		where cct_id = #{cctId,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.azoff.money.capital.model.CapCapitalChangeType" >
+	    update cap_capital_change_type
+	    set cct_type = #{cctType,jdbcType=INTEGER},
+			cct_sort = #{cctSort,jdbcType=INTEGER},
+			cct_describe = #{cctDescribe,jdbcType=VARCHAR}
+		where cct_id = #{cctId,jdbcType=INTEGER}
+	</update>
+	
+</mapper>

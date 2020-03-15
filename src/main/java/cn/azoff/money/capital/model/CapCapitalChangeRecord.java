@@ -1,15 +1,17 @@
 package cn.azoff.money.capital.model;
 
 import java.math.BigDecimal;
+
+import cn.azoff.common.base.BaseParam;
  
 /**
  * 
  * 资金变动记录
  * 
- * @version 2020-02-18 20:51:18
+ * @version 2020-03-15 20:58:13
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-public class CapCapitalChangeRecord{
+public class CapCapitalChangeRecord extends BaseParam{
     //资金变动记录
     private Integer ccrId;
     

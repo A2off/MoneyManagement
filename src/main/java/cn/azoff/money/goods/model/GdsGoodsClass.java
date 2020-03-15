@@ -1,13 +1,15 @@
 package cn.azoff.money.goods.model;
+
+import cn.azoff.common.base.BaseParam;
  
 /**
  * 
  * 物品分类
  * 
- * @version 2020-02-18 20:59:10
+ * @version 2020-03-15 20:58:13
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-public class GdsGoodsClass{
+public class GdsGoodsClass extends BaseParam{
     //物品分类
     private Integer gdcId;
     

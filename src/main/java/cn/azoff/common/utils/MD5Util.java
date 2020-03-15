@@ -12,97 +12,97 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MD5Util{
-  private static Logger log = LogManager.getLogger(MD5Util.class);
-  protected static char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6',
-          '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+	private static Logger logger = LogManager.getLogger(MD5Util.class);
+	protected static char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', 
+		'7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-  protected static MessageDigest messagedigest = null;
+	protected static MessageDigest messagedigest = null;
 
-  static {
-    try { messagedigest = MessageDigest.getInstance("MD5");
-    } catch (NoSuchAlgorithmException e) {
-      log.error("MD5FileUtil messagedigest初始化失败", e);
-    }
-  }
+	static {
+		try { messagedigest = MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			logger.error("MD5FileUtil messagedigest初始化失败", e);
+		}
+	}
 
-  /**
-   * 获得文件的md5加密值
-   *
-   * @param file
-   * @return
-   * @throws IOException
-   */
-  public static String getFileMD5String(File file) throws IOException {
-    FileInputStream in = new FileInputStream(file);
-    FileChannel ch = in.getChannel();
-    MappedByteBuffer byteBuffer = ch.map(FileChannel.MapMode.READ_ONLY, 0L, file.length());
-    messagedigest.update(byteBuffer);
-    in.close();
-    return bufferToHex(messagedigest.digest());
-  }
+	/**
+	 * 获得文件的md5加密值
+	 * 
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getFileMD5String(File file) throws IOException {
+		FileInputStream in = new FileInputStream(file);
+		FileChannel ch = in.getChannel();
+		MappedByteBuffer byteBuffer = ch.map(FileChannel.MapMode.READ_ONLY, 0L, file.length());
+		messagedigest.update(byteBuffer);
+		in.close();
+		return bufferToHex(messagedigest.digest());
+	}
 
-  /**
-   *
-   * 获得md5加密值
-   *
-   * @param str
-   * @return
-   */
-  public static String getMD5String(String str) {
-    return getMD5String(str.getBytes());
-  }
-  /**
-   *
-   * 获得md5加密值
-   *
-   * @param bytes
-   * @return
-   */
-  public static String getMD5String(byte[] bytes) {
-    messagedigest.update(bytes);
-    return bufferToHex(messagedigest.digest());
-  }
+	/**
+	 * 
+	 * 获得md5加密值
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String getMD5String(String str) {
+		return getMD5String(str.getBytes());
+	}
+	/**
+	 * 
+	 * 获得md5加密值
+	 * 
+	 * @param bytes
+	 * @return
+	 */
+	public static String getMD5String(byte[] bytes) {
+		messagedigest.update(bytes);
+		return bufferToHex(messagedigest.digest());
+	}
 
-  private static String bufferToHex(byte[] bytes) {
-    return bufferToHex(bytes, 0, bytes.length);
-  }
+	private static String bufferToHex(byte[] bytes) {
+		return bufferToHex(bytes, 0, bytes.length);
+	}
 
-  private static String bufferToHex(byte[] bytes, int m, int n) {
-    StringBuffer stringbuffer = new StringBuffer(2 * n);
-    int k = m + n;
-    for (int l = m; l < k; l++) {
-      appendHexPair(bytes[l], stringbuffer);
-    }
-    return stringbuffer.toString();
-  }
+	private static String bufferToHex(byte[] bytes, int m, int n) {
+		StringBuffer stringbuffer = new StringBuffer(2 * n);
+		int k = m + n;
+		for (int l = m; l < k; l++) {
+			appendHexPair(bytes[l], stringbuffer);
+		}
+		return stringbuffer.toString();
+	}
 
-  private static void appendHexPair(byte bt, StringBuffer stringbuffer) {
-    char c0 = hexDigits[((bt & 0xF0) >> 4)];
-    char c1 = hexDigits[(bt & 0xF)];
-    stringbuffer.append(c0);
-    stringbuffer.append(c1);
-  }
+	private static void appendHexPair(byte bt, StringBuffer stringbuffer) {
+		char c0 = hexDigits[((bt & 0xF0) >> 4)];
+		char c1 = hexDigits[(bt & 0xF)];
+		stringbuffer.append(c0);
+		stringbuffer.append(c1);
+	}
 
-  public static boolean checkPassword(String password, String md5PwdStr) {
-    String s = getMD5String(password);
-    return s.equals(md5PwdStr);
-  }
+	public static boolean checkPassword(String password, String md5PwdStr) {
+		String s = getMD5String(password);
+		return s.equals(md5PwdStr);
+	}
 
-  public static void main(String[] args) throws IOException {
-    //  String md5 = getMD5String("201611131114012wuzhimin123456801000135115018442468");
-    //    long begin = System.currentTimeMillis();
-    String str = "Public";
-    String md5Str = getMD5String(str);
-    System.out.println(md5Str);
-    //    long end = System.currentTimeMillis();
-    //    System.out.println(String.format("Str:%s,MD5:%s", str,md5Str));
-    //    System.out.println(getMD5String("e10adc3949ba59abbe56e057f20f883e"));
+	public static void main(String[] args) throws IOException {
+		//  String md5 = getMD5String("201611131114012wuzhimin123456801000135115018442468");
+		//    long begin = System.currentTimeMillis();
+		String str = "Public";
+		String md5Str = getMD5String(str);
+		System.out.println(md5Str);
+		//    long end = System.currentTimeMillis();
+		//    System.out.println(String.format("Str:%s,MD5:%s", str,md5Str));
+		//    System.out.println(getMD5String("e10adc3949ba59abbe56e057f20f883e"));
 
-    //    File file = new File("D:\\Download\\IDM6.30.8+CHS+Crack.exe");
-    //	String md5 = getFileMD5String(file);
-    //	System.out.println(md5);
+		//    File file = new File("D:\\Download\\IDM6.30.8+CHS+Crack.exe");
+		//	String md5 = getFileMD5String(file);
+		//	System.out.println(md5);
 
 
-    //    System.out.println("time:" + (end - begin) / 1000L + "s");
-  }
+		//    System.out.println("time:" + (end - begin) / 1000L + "s");
+	}
 }

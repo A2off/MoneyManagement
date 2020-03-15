@@ -1,13 +1,15 @@
 package cn.azoff.money.capital.model;
+
+import cn.azoff.common.base.BaseParam;
  
 /**
  * 
  * 资金变动类型
  * 
- * @version 2020-02-18 20:51:18
+ * @version 2020-03-15 20:58:13
  * @author Azoff <a href="http://www.azoff.cn">Azoff</a>
  */
-public class CapCapitalChangeType{
+public class CapCapitalChangeType extends BaseParam{
     //资金变动类型
     private Integer cctId;
     
@@ -20,6 +22,8 @@ public class CapCapitalChangeType{
     //类型描述
     private String cctDescribe;
     
+
+ 
     /********** get/set ***********/
     public Integer getCctId() {
         return cctId;
